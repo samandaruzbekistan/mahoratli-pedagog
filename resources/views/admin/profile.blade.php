@@ -9,7 +9,6 @@
 
             <div class="mb-3">
                 <h1 class="h3 d-inline align-middle">Profile</h1>
-
             </div>
             <div class="row">
                 <div class="col-md-4 col-xl-3">

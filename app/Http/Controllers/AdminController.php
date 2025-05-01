@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -48,5 +49,30 @@ class AdminController extends Controller
         }
     }
 
+    public function all_sections(){
+        $sections = Section::all();
+        return view('admin.section', ['sections' => $sections]);
+    }
 
+    public function section($id){
+        $section = Section::find($id);
+        return view('admin.section', ['section' => $section]);
+    }
+
+    public function add_section(Request $request){
+        $request->validate([
+            'name' => 'required|string',
+        ]);
+        $section = new Section();
+        $section->name = $request->name;
+        $section->description = $request->description;
+
+        $file = $request->img;
+        $fileName = $request->file('img')->getClientOriginalExtension();
+        $new_name = time().$fileName;
+        $dir = "topic/";
+        $file->move($dir, $new_name);
+        $section->save();
+        return back()->with('success',1);
+    }
 }
