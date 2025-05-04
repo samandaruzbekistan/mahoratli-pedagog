@@ -31,11 +31,11 @@
                             <h5 class="h6 card-title">About</h5>
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-1">
-                                    <i class="align-middle me-1" data-feather="user"></i>F.I.SH: <a href="#">Odina Qayumova</a>
+                                    <i class="align-middle me-1" data-feather="user"></i>F.I.SH: <a href="#">Aziza Suvonqulova</a>
                                 </li>
                                 <li class="mb-1">
                                     <i class="align-middle me-1" data-feather="briefcase"></i>Ish joyi: <a href="#">GulDU</a></li>
-                                <li class="mb-1"><i class="align-middle me-1" data-feather="phone"></i>Telefon: <a href="#">+998 93 328 02 11</a></li>
+                                <li class="mb-1"><i class="align-middle me-1" data-feather="phone"></i>Telefon: <a href="#">+998 93 891 95 91</a></li>
                             </ul>
                         </div>
                         <hr class="my-0">

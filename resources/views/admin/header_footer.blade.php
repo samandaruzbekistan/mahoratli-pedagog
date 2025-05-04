@@ -46,18 +46,125 @@
                     </a>
                 </li>
 
-{{--                <li class="sidebar-item @yield('qism1')">--}}
-{{--                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 1]) }}">--}}
-{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"--}}
-{{--                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
-{{--                             class="feather feather-book align-middle">--}}
-{{--                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>--}}
-{{--                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>--}}
-{{--                        </svg>--}}
-{{--                        <span class="align-middle">1 - qism</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li class="sidebar-item @yield('qism1')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 1]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">1 - bob</span>
+                    </a>
+                </li>
 
+                <li class="sidebar-item @yield('qism2')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 2]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">2 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism3')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 3]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">3 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism4')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 4]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">4 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism5')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 5]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">5 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism6')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 6]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">6 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism7')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 7]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">7 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism8')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 8]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">8 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism9')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 9]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">9 - bob</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @yield('qism10')">
+                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 10]) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-book align-middle">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span class="align-middle">10 - bob</span>
+                    </a>
+                </li>
 {{--                <li class="sidebar-item @yield('qism2')">--}}
 {{--                    <a class="sidebar-link" href="{{ route('admin.view.section', ['id' => 2]) }}">--}}
 {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"--}}
