@@ -56,7 +56,7 @@ class AdminController extends Controller
 
     public function section($id){
         $section = Section::find($id);
-        return view('admin.section', ['section' => $section]);
+        return view('admin.view_section', ['section' => $section]);
     }
 
     public function add_section(Request $request){

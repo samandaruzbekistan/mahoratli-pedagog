@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('article_pdfs', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->unsignedBigInteger('section_id');
-            $table->string('pdf_url')->nullable();
+            $table->string('pdf')->nullable();
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->timestamps();
         });
