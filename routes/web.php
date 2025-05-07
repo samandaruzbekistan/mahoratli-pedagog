@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\TopicPdfController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,13 @@ Route::prefix('admin')->group(function () {
 
     Route::get('section/{id}', [AdminController::class, 'section'])->name('admin.view.section');
 
+    Route::get('theme-topic/{theme_id}', [TopicPdfController::class, 'show_theme_topics'])->name('theme.topic.view');
+    Route::post('add-topic', [TopicPdfController::class, 'new_topic'])->name('admin.topic.add');
+    Route::get('delete-topic/{id}', [TopicPdfController::class, 'delete_topic'])->name('admin.topic.delete');
+
+    Route::get('theme-presentation/{theme_id}', [PresentationController::class, 'show_theme_topics'])->name('theme.presentation.view');
+    Route::post('add-presentation', [PresentationController::class, 'new_topic'])->name('admin.presentation.add');
+    Route::get('delete-presentation/{id}', [PresentationController::class, 'delete_topic'])->name('admin.presentation.delete');
 
 
     Route::get('theme-question/{id}', [QuestionController::class, 'view_questions'])->name('theme.question.view');
@@ -48,9 +56,7 @@ Route::prefix('admin')->group(function () {
     Route::post('add-audio', [AudioController::class, 'add_audio'])->name('admin.audio.add');
     Route::get('delete-audio/{id}', [AudioController::class, 'delete_audio'])->name('admin.audio.delete');
 
-    Route::get('theme-topic/{theme_id}', [TopicPdfController::class, 'show_theme_topics'])->name('theme.topic.view');
-    Route::post('add-topic', [TopicPdfController::class, 'new_topic'])->name('admin.topic.add');
-    Route::get('delete-topic/{id}', [TopicPdfController::class, 'delete_topic'])->name('admin.topic.delete');
+
 
     Route::post('add-section', [ThemeController::class, 'add_section'])->name('admin.add.section');
 });
