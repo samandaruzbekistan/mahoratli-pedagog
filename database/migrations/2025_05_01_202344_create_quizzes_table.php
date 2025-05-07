@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->text('quiz');
             $table->string('photo')->nullable();
-            $table->unsignedBigInteger('test_id')->nullable();
-            $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
+            $table->unsignedBigInteger('section_id')->nullable();
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->timestamps();
         });
     }

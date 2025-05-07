@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Answer;
 use App\Models\Quiz;
+use App\Models\Section;
 use App\Models\Test;
 use Illuminate\Http\Request;
 
@@ -16,13 +17,13 @@ class QuizController extends Controller
             'answer_a' => 'required|string',
             'answer_b' => 'required|string',
             'answer_c' => 'required|string',
-            'answer_d' => 'required|string',
-            'theme_id' => 'required|numeric',
+            'answer_d' => 'nullable|string',
+            'section_id' => 'required|numeric',
         ]);
 
         $quiz = new Quiz;
         $quiz->quiz = $request->quiz;
-        $quiz->test_id = $request->test_id;
+        $quiz->section_id = $request->section_id;
 
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');
@@ -38,7 +39,10 @@ class QuizController extends Controller
         $this->add_answer($request->answer_a, $saved_id, 1);
         $this->add_answer($request->answer_b, $saved_id, 0);
         $this->add_answer($request->answer_c, $saved_id, 0);
-        $this->add_answer($request->answer_d, $saved_id, 0);
+
+        if ($request->answer_d) {
+            $this->add_answer($request->answer_d, $saved_id, 0);
+        }
 
         return back()->with('success', 1);
     }
@@ -52,10 +56,10 @@ class QuizController extends Controller
     }
 
     public function show_quizzes($test_id){
-        $theme = Test::find($test_id);
-        $quizzes = Quiz::with('answers')->where('test_id', $test_id)->get();
+        $theme = Section::find($test_id);
+        $quizzes = Quiz::with('answers')->where('section_id', $test_id)->get();
 //        return $quizzes;
-        return view('admin.view_theme_quizzes', ['theme' => $theme,'quizzes' => $quizzes, 'test_id' => test_id]);
+        return view('admin.view_theme_quizzes', ['section' => $theme,'quizzes' => $quizzes, 'section_id' => $test_id]);
     }
 
     public function delete_quiz($quiz_id){

@@ -13,4 +13,6 @@ class Answer extends Model
     {
         return $this->belongsTo(Quiz::class);
     }
+
+    public $timestamps = false;
 }
