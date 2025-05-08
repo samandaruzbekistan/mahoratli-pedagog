@@ -110,30 +110,26 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="main_title">
-                        <h2 class="mb-3">{{ $theme->name }}</h2>
-                        <h3 class="mb-3 text-secondary">{{ $theme->subtitle }}</h3>
-                    </div>
+                    <h1 class="mb-3 text-center">{{ $theme->name }}</h1>
                 </div>
             </div>
             <hr>
             <div class="row justify-content-center">
-                <div class="col-12">
-                    <iframe src="{{ asset('pdf') }}/{{ $topic->pdf }}" width="100%" height="600px"></iframe>
-                </div>
-                <hr>
-                <div>
+                @foreach($article_pdfs as $article_pdf)
                     <div class="col-12">
-                        <h2 class="text-center">Mavzu audiosini tinglang</h2>
-                        <div class="holder">
-                            <audio controls>
-                                <source src="{{ asset('audio') }}/{{ $audio->name }}" type="audio/mpeg">
-                            </audio>
-                        </div>
+                        <iframe src="{{ asset('pdf') }}/{{ $article_pdf->pdf }}" width="100%" height="600px"></iframe>
                     </div>
-                </div>
+                    <hr>
+                @endforeach
             </div>
             <hr>
+            <h2 class="text-center">Taqdimot</h2>
+            @foreach($article_ppts as $article_ppt)
+                <div class="col-12">
+                    <iframe src="https://view.officeapps.live.com/op/embed.aspx?src={{ asset('presentation') }}/{{ $article_ppt->presentation }}" width='100%' height='600px' frameborder='0'></iframe>
+                </div>
+            @endforeach
+
             <h2 class="text-center">Testlarni yeching</h2>
             <form action="{{ route('user.test.check') }}" method="post">
                 @csrf
@@ -162,62 +158,6 @@
                 </div>
             </form>
             <hr>
-            <h2 class="text-center d-block">Rebuslarni yeching</h2>
-            <div class="container mt-3">
-                <div class="row justify-content-around">
-                    @foreach($questions as $present)
-                        <div class="col-lg-5 col-md-5 mb-30 col-md-6 pr single_feature p-3">
-                            <div class="events_item">
-                                <h4>{{ $present->question }}</h4>
-                                <div class=" ">
-                                    <img src="../img/question/{{ $present->photo }}" class="img-thumbnail" alt="">
-                                </div>
-                                <div class="">
-                                    <form action="{{ route('user.rebus.check') }}" method="post">
-                                        @csrf
-                                        <input type="text" class="form-control mb-2 mt-2" name="answer" placeholder="Javobgiz..."
-                                               required>
-                                        <input type="hidden" name="rebus_id" value="{{ $present->id }}">
-                                        <button style="background-color: #7a6ad8 !important;" class="btn text-white"
-                                                type="submit">Tekshirish
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <hr>
-            <div class="col-12 mt-5 text-center">
-                <h2>Tillararo integratsiya</h2>
-            </div>
-            <div class="col-3"> </div>
-            <div class="col-6 quiz-wrapper justify-content-center">
-                <ul class="options">
-                    @foreach($dicts as $dict)
-                        <li class="option text-dark" data-target="answer{{ $dict->id }}">{{ $dict->uzbek }}</li>
-                    @endforeach
-                </ul>
-                <table class="table answers table-bordered">
-                    <thead>
-                    <tr>
-                        <th >English</th>
-                        <th >O'zbekcha</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($dicts->shuffle() as $dict)
-                        <tr>
-                            <td>{{ $dict->english }}</td>
-                            <td><span class="target" data-accept="answer{{ $dict->id }}">&nbsp;</span></td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-                <button type="submit" value="submit" class="btn btn-primary">Tekshirish</button>
-            </div>
         </div>
     </section>
     <!--================ End Feature Area =================-->
