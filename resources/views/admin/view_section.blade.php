@@ -21,9 +21,9 @@
                             <th>Maruza</th>
                             <th>Taqdimot</th>
                             <th>Testlar</th>
-                            <th>Rebus</th>
+{{--                            <th>Rebus</th>--}}
                             <th>Lug'at</th>
-                            <th>O'chirish</th>
+{{--                            <th>O'chirish</th>--}}
                         </tr>
                         </thead>
                         <tbody>
@@ -69,20 +69,20 @@
                                         </svg>
                                     </a>
                                 </td>
+{{--                                <td>--}}
+{{--                                    <a href="{{ route('theme.question.view', ['id' => $section->id]) }}"--}}
+{{--                                       class="btn btn-info text-white">--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
+{{--                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                                             stroke-linecap="round" stroke-linejoin="round"--}}
+{{--                                             class="feather feather-check-circle align-middle">--}}
+{{--                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>--}}
+{{--                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>--}}
+{{--                                        </svg>--}}
+{{--                                    </a>--}}
+{{--                                </td>--}}
                                 <td>
-                                    <a href="{{ route('theme.question.view', ['id' => $section->id]) }}"
-                                       class="btn btn-info text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                             stroke-linecap="round" stroke-linejoin="round"
-                                             class="feather feather-check-circle align-middle">
-                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                        </svg>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('admin.theme.dicts', ['theme_id' => $section->id]) }}"
+                                    <a href="{{ route('admin.section.dict.sections', ['section_id' => $section->id]) }}"
                                        class="btn btn-secondary text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -96,21 +96,21 @@
                                         </svg>
                                     </a>
                                 </td>
-                                <td>
-                                    <a href="{{ route('theme.question.view', ['id' => $section->id]) }}"
-                                       class="btn btn-danger text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                             stroke-linecap="round" stroke-linejoin="round"
-                                             class="feather feather-trash-2 align-middle">
-                                            <polyline points="3 6 5 6 21 6"></polyline>
-                                            <path
-                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                            <line x1="10" y1="11" x2="10" y2="17"></line>
-                                            <line x1="14" y1="11" x2="14" y2="17"></line>
-                                        </svg>
-                                    </a>
-                                </td>
+{{--                                <td>--}}
+{{--                                    <a href="{{ route('theme.question.view', ['id' => $section->id]) }}"--}}
+{{--                                       class="btn btn-danger text-white">--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
+{{--                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                                             stroke-linecap="round" stroke-linejoin="round"--}}
+{{--                                             class="feather feather-trash-2 align-middle">--}}
+{{--                                            <polyline points="3 6 5 6 21 6"></polyline>--}}
+{{--                                            <path--}}
+{{--                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>--}}
+{{--                                            <line x1="10" y1="11" x2="10" y2="17"></line>--}}
+{{--                                            <line x1="14" y1="11" x2="14" y2="17"></line>--}}
+{{--                                        </svg>--}}
+{{--                                    </a>--}}
+{{--                                </td>--}}
                             </tr>
                         </tbody>
                     </table>
@@ -119,37 +119,6 @@
         </div>
     </main>
 
-    <main class="content forma" style="padding-bottom: 0; display: none">
-        <div class="container-fluid p-0">
-            <div class="col-md-8 col-xl-9">
-                <div class="">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Yangi mavzu qo'shish</h5>
-                        </div>
-                        <div class="card-body h-100">
-                            <form action="{{ route('admin.add.section') }}" method="post">
-                                @csrf
-                                <div class="mb-3">
-                                    <label class="form-label">Nomi <span class="text-danger">*</span></label>
-                                    <input name="name" required type="text" class="form-control" placeholder="">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Subtitle <span class="text-danger">*</span></label>
-                                    <input name="subtitle" required type="text" class="form-control" placeholder="">
-                                </div>
-                                <input type="hidden" name="section_id" value="{{ $section->id }}">
-                                <div class=" text-end">
-                                    <button type="button" class="btn btn-danger cancel">Bekor qilish</button>
-                                    <button type="submit" class="btn btn-success">Qo'shish</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 @endsection
 
 

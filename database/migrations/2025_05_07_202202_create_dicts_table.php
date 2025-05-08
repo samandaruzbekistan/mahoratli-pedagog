@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
-            $table->string('answer');
-            $table->unsignedBigInteger('quiz_id');
-            $table->integer('is_correct')->default(0);
-            $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('cascade');
+        Schema::create('dicts', function (Blueprint $table) {
+            $table->id();
+            $table->text('english');
+            $table->text('uzbek');
+            $table->unsignedBigInteger('dict_section_id');
+            $table->foreign('dict_section_id')->references('id')->on('dict_sections')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::dropIfExists('dicts');
     }
 };
