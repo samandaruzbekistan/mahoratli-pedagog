@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ArticlePdf;
+use App\Models\DictSection;
 use App\Models\Presentation;
 use App\Models\Quiz;
 use App\Models\Section;
@@ -16,7 +17,9 @@ class UserController extends Controller
         $article_pdf = ArticlePdf::where('section_id', $id)->get();
         $article_ppt = Presentation::where('section_id', $id)->get();
         $quizzes = Quiz::with('answers')->where('section_id', $id)->get();
-        return view('user.show_theme', ['quizzes' => $quizzes, 'theme' => $section, 'article_pdfs' => $article_pdf, 'article_ppts' => $article_ppt]);
+        $dict_sections = DictSection::with('dicts')->where('section_id', $id)->get();
+//        return $dict_sections;
+        return view('user.show_theme', ['dict_sections' => $dict_sections, 'quizzes' => $quizzes, 'theme' => $section, 'article_pdfs' => $article_pdf, 'article_ppts' => $article_ppt]);
     }
 
     public function check(Request $request){

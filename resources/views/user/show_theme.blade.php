@@ -112,6 +112,7 @@
                 <div class="col-lg-8">
                     <h1 class="mb-3 text-center">{{ $theme->name }}</h1>
                 </div>
+                {!! $theme->description !!}
             </div>
             <hr>
             <div class="row justify-content-center">
@@ -158,6 +159,36 @@
                 </div>
             </form>
             <hr>
+            @foreach($dict_sections as $dict_section)
+                <div class="col-12 mt-5 text-center">
+                    <h2>{{ $dict_section->name }}</h2>
+                </div>
+                <div class="col-3"> </div>
+                <div class="col-6 quiz-wrapper justify-content-center">
+                    <ul class="options">
+                        @foreach($dict_section->dicts as $dict)
+                            <li class="option text-dark" data-target="answer{{ $dict['id'] }}">{{ $dict['uzbek'] }}</li>
+                        @endforeach
+                    </ul>
+                    <table class="table answers table-bordered">
+                        <thead>
+                        <tr>
+                            <th >English</th>
+                            <th >O'zbekcha</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($dict_section->dicts->shuffle() as $dict)
+                            <tr>
+                                <td>{{ $dict['english'] }}</td>
+                                <td><span class="target" data-accept="answer{{ $dict['id'] }}">&nbsp;</span></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    <button type="submit" value="submit" class="btn btn-primary">Tekshirish</button>
+                </div>
+            @endforeach
         </div>
     </section>
     <!--================ End Feature Area =================-->
